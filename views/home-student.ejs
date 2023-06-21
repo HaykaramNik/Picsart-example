@@ -1,0 +1,25 @@
+<% if(typeof teachers !== 'undefined') { %>
+    <section class="main">
+        <div class="classes-box">
+            <% teachers.forEach((teacher) => { %>
+                <div class="blocks">
+                    <div class="glob_div">
+                        <div class="img_div">
+                            <img src="/uploads/<%= teacher.image_name %>" class="imgg" alt="#" style="width:200px">
+                        </div>
+                        <div class="text" style="margin:20px;"><%= teacher.name %></div>
+                    </div>
+                    <div class="info i-1">
+                        <form action="/app/users/<%= teacher.id %>/rates" method="post">
+                            <button><span class="num" style="display: block;">1</span><span class="sim" style="display: none;">&check;</span></button>
+                            <button><span class="num" style="display: block;">2</span><span class="sim" style="display: none;">&check;</span></button>
+                            <button><span class="num" style="display: block;">3</span><span class="sim" style="display: none;">&check;</span></button>
+                            <button><span class="num" style="display: block;">4</span><span class="sim" style="display: none;">&check;</span></button>
+                            <button><span class="num" style="display: block;">5</span><span class="sim" style="display: none;">&check;</span></button>
+                        </form>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+<% } %>
